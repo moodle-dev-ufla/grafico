@@ -21,5 +21,4 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $string['pluginname'] = 'Gráfico';
-$string['col_catname'] = 'Nome da categoria';
-$string['col_numofcourses'] = 'Cursos';
+$string['label_numofcourses'] = 'Quantidade de cursos';

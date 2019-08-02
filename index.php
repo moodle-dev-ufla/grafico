@@ -30,20 +30,28 @@ echo $OUTPUT->heading(get_string('pluginname', 'report_grafico'));
 
 $categories = $DB->get_records('course_categories', null, 'name');
 
-$table = new html_table();
-$table->size = array('85%', '15%');
-$table->head = array(
-    get_string('col_catname', 'report_grafico'),
-    get_string('col_numofcourses', 'report_grafico')
-);
+$chart_labels = array();
+$chart_values = array();
 
 foreach ($categories as $cat) {
     $numofcourses = $DB->count_records(
-        'course', array('visible'=>'1', 'category'=>$cat->id));
+        'course', array('visible' => '1', 'category' => $cat->id));
 
-    $table->data[] = array($cat->name, $numofcourses);
+    $chart_labels[] = $cat->name;
+    $chart_values[] = $numofcourses;
 }
 
-echo html_writer::table($table);
+if (class_exists('core\chart_bar')) {
+    $chart = new core\chart_bar();
+
+    $serie = new core\chart_series(
+        get_string('label_numofcourses', 'report_grafico'), $chart_values
+    );
+
+    $chart->add_series($serie);
+    $chart->set_labels($chart_labels);
+
+    echo $OUTPUT->render_chart($chart);
+}
 
 echo $OUTPUT->footer();
