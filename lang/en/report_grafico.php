@@ -14,12 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Strings for component, language 'pt_br'
+ * Strings for component, language 'en'
  *
  * @package    report
  * @copyright  2019 Paulo Jr
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$string['pluginname'] = 'Acesso à base de dados';
-$string['col_catname'] = 'Nome da categoria';
-$string['col_numofcourses'] = 'Cursos';
+$string['pluginname'] = 'Chart';
+$string['col_catname'] = 'Category name';
+$string['col_numofcourses'] = 'Courses';

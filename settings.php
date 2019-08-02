@@ -22,5 +22,5 @@
  */
 defined('MOODLE_INTERNAL') || die;
 
-$ADMIN->add('reports', new admin_externalpage('reportacessodb', get_string('pluginname', 'report_acessodb'), "$CFG->wwwroot/report/acessodb/index.php"));
+$ADMIN->add('reports', new admin_externalpage('reportgrafico', get_string('pluginname', 'report_grafico'), "$CFG->wwwroot/report/grafico/index.php"));
 $settings = null;

@@ -23,18 +23,18 @@
 require __DIR__ . '/../../config.php';
 require_once $CFG->libdir . '/adminlib.php';
 
-admin_externalpage_setup('reportacessodb', '', null, '', array('pagelayout' => 'report'));
+admin_externalpage_setup('reportgrafico', '', null, '', array('pagelayout' => 'report'));
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading(get_string('pluginname', 'report_acessodb'));
+echo $OUTPUT->heading(get_string('pluginname', 'report_grafico'));
 
 $categories = $DB->get_records('course_categories', null, 'name');
 
 $table = new html_table();
 $table->size = array('85%', '15%');
 $table->head = array(
-    get_string('col_catname', 'report_acessodb'),
-    get_string('col_numofcourses', 'report_acessodb')
+    get_string('col_catname', 'report_grafico'),
+    get_string('col_numofcourses', 'report_grafico')
 );
 
 foreach ($categories as $cat) {
